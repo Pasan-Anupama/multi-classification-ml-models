@@ -1,0 +1,7 @@
+1) In the first test  -> Tries with some of records and got 0.56 overall Accuracy
+
+2) At the second test -> Tred with all the records and got 0.59 overall Accuracy
+
+3) At the third test  -> Tried with removing early stopping and applied 20 epochs, got 0.61 overall Accuracy
+
+4) At the forth test  -> Tried with the previuos research CNN model & with 20 epochs, got 0.56 overall Accuracy
