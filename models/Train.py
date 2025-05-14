@@ -12,9 +12,9 @@ def train_model(X_train, y_train, X_val, y_val):
     history = model.fit(
         X_train, y_train,
         validation_data=(X_val, y_val),
-        epochs=20,
+        epochs=50,
         batch_size=32,
-        # callbacks=callbacks
+        callbacks=callbacks
     )
     
     return model, history

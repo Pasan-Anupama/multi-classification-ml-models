@@ -76,7 +76,7 @@ if __name__ == "__main__":
     
     
     # Clarifying the dataset provided for training the model
-    # print("First 10 X train data(segments) : ", X_train[:10]) # This contains an array of segments (One segment is  
+    # print("First 10 X_train data(segments) : ", X_train[:10]) # This contains an array of segments (One segment is  
     # 250 samples long) -> there are large number of 250 sampled arrays in this X_train array
     # print("First 10 y train data (Labels) : ", y_train[:30])
     # print("Shape of the dataset : ", X_train.shape)
