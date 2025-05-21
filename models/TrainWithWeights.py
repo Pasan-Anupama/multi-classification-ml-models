@@ -1,10 +1,10 @@
 import tensorflow as tf
+import numpy as np 
 from .CnnModel import build_cnn
 
-def train_model(X_train, y_train, X_val, y_val):
-    model = build_cnn(input_shape=X_train.shape[1:])
+def train_model_with_weights(X_train, y_train, X_val, y_val, class_weights=None):
+    model = build_cnn(input_shape=X_train.shape[1:], num_classes=len(np.unique(y_train)))
     
-    # Define early stopping according to the improvement of val_loss (Validation loss)
     callbacks = [
         tf.keras.callbacks.EarlyStopping(patience=5, restore_best_weights=True)
     ]
@@ -14,8 +14,8 @@ def train_model(X_train, y_train, X_val, y_val):
         validation_data=(X_val, y_val),
         epochs=50,
         batch_size=100,
-        callbacks=callbacks
+        callbacks=callbacks,
+        class_weight=class_weights  
     )
     
     return model, history
-
