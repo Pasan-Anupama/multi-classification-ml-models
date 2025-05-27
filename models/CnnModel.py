@@ -19,6 +19,22 @@ def build_cnn(input_shape, num_classes=4):
         layers.Dense(num_classes, activation='softmax')
         
         
+        # Low complexity model
+        
+        # layers.Input(shape=input_shape),  
+        # # Reduced filters and kernel size
+        # layers.Conv1D(32, 7, activation='relu', padding='same'),
+        # layers.BatchNormalization(),
+        # layers.MaxPooling1D(2),
+        # layers.Conv1D(64, 5, activation='relu', padding='same'),
+        # layers.BatchNormalization(),
+        # layers.MaxPooling1D(2),
+        # layers.GlobalAveragePooling1D(),
+        # # Smaller dense layer
+        # layers.Dense(64, activation='relu'),
+        # layers.Dropout(0.3),
+        # layers.Dense(num_classes, activation='softmax')
+        
         
         # Previous research cnn model
         

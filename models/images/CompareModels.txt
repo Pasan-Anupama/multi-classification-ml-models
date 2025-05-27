@@ -185,3 +185,8 @@ Batch size = 100, Iterations in an epoch = 52536/100 = 526
 
 9) At 9th test -> Use weighted Loss function and batch size = 100. Got 0.81 overall accuracy
 
+
+*** SMOTE gives more accuracy than using weighted loss function ***
+
+10) At 10th test -> Reduce the model complexity, use SMOTE and batch size = 100. Got accuracy of 0.81
+

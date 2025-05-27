@@ -77,7 +77,7 @@ if __name__ == "__main__":
     
     # print("++++++++++++++++++++++++++++++++++++")
     # print("Total testing segments : ", len(X_test))
-    # print("Total testing labels : ", len(y_test))
+    # print("Total testing labels : ", len(y_test)) 
     # print("-----------------------------------")
     
     # Train model explicitly on train set, validate on test set
