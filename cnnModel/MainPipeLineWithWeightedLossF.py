@@ -7,9 +7,9 @@ from preProcessing.ClassBalancing import balance_classes
 from preProcessing.Normalization import normalize_beats
 from preProcessing.Load import load_ecg
 from preProcessing.Labels import create_labels
-from models.AssignClassWeights import get_class_weights
-from models.TrainWithWeights import train_model_with_weights
-from models.Evaluate import evaluate_model, plot_metrics
+from cnnModel.AssignClassWeights import get_class_weights
+from cnnModel.TrainWithWeights import train_model_with_weights
+from cnnModel.Evaluate import evaluate_model, plot_metrics
 
 def process_record(record_id, data_dir):
     

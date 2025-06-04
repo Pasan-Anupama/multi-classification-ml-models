@@ -25,15 +25,15 @@ def extract_heartbeats(signal, fs, annotation_rpeaks=None, before=0.25, after=0.
         valid_rpeaks: Array of used R-peak positions
     """
     # Clean signal and detect R-peaks using neurokit2 library
-    # cleaned = nk.ecg_clean(signal, sampling_rate=fs)
-    # rpeaks = annotation_rpeaks if annotation_rpeaks is not None else \
-    #          nk.ecg_findpeaks(cleaned, sampling_rate=fs)['ECG_R_Peaks']
+    cleaned = nk.ecg_clean(signal, sampling_rate=fs)
+    rpeaks = annotation_rpeaks if annotation_rpeaks is not None else \
+             nk.ecg_findpeaks(cleaned, sampling_rate=fs)['ECG_R_Peaks']
     
     # Detect R peaks using Pan-Tompkins algorithm
-    if annotation_rpeaks is not None :
-        rpeaks = annotation_rpeaks
-    else:
-        rpeaks = pan_tompkins_rpeak_detection(signal, fs)
+    # if annotation_rpeaks is not None :
+    #     rpeaks = annotation_rpeaks
+    # else:
+    #     rpeaks = pan_tompkins_rpeak_detection(signal, fs)
     
     beats = []
     valid_rpeaks = []

@@ -14,3 +14,4 @@ def get_class_weights(y_train):
     class_weights = dict(zip(classes, weights))
     print(f"Computed class weights: {class_weights}")
     return class_weights
+

@@ -167,7 +167,6 @@ The traing and testing dataset takes the same shape as above
 
 
 
-
 * following test is conducted splitting the dataset as above, 5 call-backs, using SMOTE and batch size = 100 and removed class
   balancing for test data
 
@@ -186,7 +185,13 @@ Batch size = 100, Iterations in an epoch = 52536/100 = 526
 9) At 9th test -> Use weighted Loss function and batch size = 100. Got 0.81 overall accuracy
 
 
+
 *** SMOTE gives more accuracy than using weighted loss function ***
 
 10) At 10th test -> Reduce the model complexity, use SMOTE and batch size = 100. Got accuracy of 0.81
+
+11) At 11th test -> Used same dataset split as DS_1 and DS_2, Use callbacks, batch_size = 32. Got 0.86 overall accuracy
+
+12) At 12th test -> Used same dataset and same initial conditions (callbacks, batch size = 32) and removed denoising. Got 0.95
+    overall accuracy
 

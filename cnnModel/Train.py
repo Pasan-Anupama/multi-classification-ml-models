@@ -4,8 +4,8 @@ from .CnnModel import build_cnn
 from .CnnModelWithChannelAttention import build_cnn_with_attention
 
 def train_model(X_train, y_train, X_val, y_val):
-    # model = build_cnn(input_shape=X_train.shape[1:])
-    model = build_cnn_with_attention(input_shape=X_train.shape[1:], num_classes=len(np.unique(y_train)))
+    model = build_cnn(input_shape=X_train.shape[1:])
+    # model = build_cnn_with_attention(input_shape=X_train.shape[1:], num_classes=len(np.unique(y_train)))
     
     # Compile the model explicitly
     model.compile(

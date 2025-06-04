@@ -5,7 +5,7 @@ from preProcessing.Segment import extract_heartbeats
 from preProcessing.Load import load_ecg
 import matplotlib.pyplot as plt 
 
-record_id = 100
+record_id = 101
 data_dir = './data/mitdb'
 
 signal, rpeaks, fs, ann = load_ecg(record_id, data_dir)
@@ -14,6 +14,7 @@ print("Number of events/R peaks found by annotations : ", len(rpeaks))
 beats, valid_rpeaks = extract_heartbeats(signal,fs,ann.sample)
 print("Number of events/R peaks found by Pan-Tompkins algorithm : ", len(valid_rpeaks))
 print("Number of segments taken from the record : ", len(beats))
+print("Accuracy of the algorithm : ", len(valid_rpeaks)/len(rpeaks))
 
 # Plot ECG with detected R-peaks
 plt.figure(figsize=(15, 4))
