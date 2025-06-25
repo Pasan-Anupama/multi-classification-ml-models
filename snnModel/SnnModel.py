@@ -21,9 +21,20 @@ class SNN(nn.Module):
         mem2 = self.lif2.init_leaky()
         spk2_rec = []
         for step in range(self.num_steps):
-            cur1 = self.fc1(x)
+            cur1 = self.fc1(x)  
             spk1, mem1 = self.lif1(cur1, mem1)
             cur2 = self.fc2(spk1)
             spk2, mem2 = self.lif2(cur2, mem2)
             spk2_rec.append(spk2)
         return torch.stack(spk2_rec, dim=0).sum(dim=0)
+    
+# if __name__ == "__main__":
+#     from torchsummary import summary
+#     import torch
+
+#     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
+#     model = SNN(num_inputs=250, num_outputs=5).to(device)
+#     summary(model, input_size=(250,), device=str(device))
+
+    
+

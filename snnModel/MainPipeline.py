@@ -26,8 +26,8 @@ def process_record(record_id, data_dir, balance=True):
     print(f"Extracted {len(beats)} valid beats")
     
     beats = normalize_beats(beats)
-    beats_spikes = delta_modulation(beats)
     labels = create_labels(valid_rpeaks, ann)
+    beats_spikes = delta_modulation(beats)
     
     if len(labels) != len(beats_spikes):
         print(f"Warning: Number of labels ({len(labels)}) does not match number of beats ({len(beats_spikes)}) for record {record_id}.")

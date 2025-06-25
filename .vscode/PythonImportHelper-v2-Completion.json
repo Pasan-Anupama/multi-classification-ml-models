@@ -1197,7 +1197,7 @@
         "kind": 2,
         "importPath": "snnModel.MainPipeline",
         "description": "snnModel.MainPipeline",
-        "peekOfCode": "def process_record(record_id, data_dir, balance=True):\n    signal, rpeaks, fs, ann = load_ecg(record_id, data_dir)\n    print(f\"Total annotations: {len(ann.sample)}\")\n    signal = bandpass_filter(signal, fs)\n    signal = notch_filter(signal, fs)\n    signal = remove_baseline(signal, fs)\n    beats, valid_rpeaks = extract_heartbeats(signal, fs, ann.sample)\n    print(f\"Extracted {len(beats)} valid beats\")\n    beats = normalize_beats(beats)\n    beats_spikes = delta_modulation(beats)",
+        "peekOfCode": "def process_record(record_id, data_dir, balance=True):\n    signal, rpeaks, fs, ann = load_ecg(record_id, data_dir)\n    print(f\"Total annotations: {len(ann.sample)}\")\n    signal = bandpass_filter(signal, fs)\n    signal = notch_filter(signal, fs)\n    signal = remove_baseline(signal, fs)\n    beats, valid_rpeaks = extract_heartbeats(signal, fs, ann.sample)\n    print(f\"Extracted {len(beats)} valid beats\")\n    beats = normalize_beats(beats)\n    labels = create_labels(valid_rpeaks, ann)",
         "detail": "snnModel.MainPipeline",
         "documentation": {}
     },
